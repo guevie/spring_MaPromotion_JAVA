@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
+    version="2.3">
+	<managed-bean>
+		<managed-bean-name>etudiantBean</managed-bean-name>
+		<managed-bean-class>fr.doranco.com.Etudiant</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>promotionBean</managed-bean-name>
+		<managed-bean-class>fr.doranco.com.Promotion</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<from-view-id>/index.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>ajouter_etudiant</from-outcome>
+			<to-view-id>/formulaire.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/formulaire.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>accueil</from-outcome>
+			<to-view-id>/index.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+</faces-config>
